@@ -19,15 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//------------------------------------------------------------------------------------------------------
+
 let categorias;
 
 function crearcategorias()
 {
   document.getElementById("menu").innerHTML="";
-  document.getElementById("productos") = innerHTML="";
+  document.getElementById("productoscat") = innerHTML="";
 
   categorias.forEach((element) =>
   {
+      console.log(element.name);
       const scroll1 = `
       <li><a herf = "#${element.name}">${element.name}</a></li>;
       `;
@@ -42,10 +45,12 @@ function crearcategorias()
       `;
 
       document.getElementById("menu").appendChild(scroll1);
-      document.getElementById("productos").appendChild(scroll2);
+      document.getElementById("productoscat").appendChild(scroll2);
 
   });
 }
+
+//------------------------------------------------------------------------------------------------------
 
 function mostrar(productos) {
 
