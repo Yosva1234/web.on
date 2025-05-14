@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.mi-boton {
+    position: absolute; /* Permite posicionar el botón en relación a su contenedor */
+    top: 10px; /* Espacio desde la parte superior */
+    left: 10px; /* Espacio desde la izquierda */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+
+nav {
+    position: relative;
+    display: inline-block;
+}
+
+#menu-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    z-index: 1;
+}
+
+#menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+#menu li a:hover {
+    background-color: #ddd;
+}
+
+.categoria {
+    padding: 2rem;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Contenedor principal */
+/* Contenedor de productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no sume ancho */
+}
+
+/* Cada producto */
+.producto {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    word-break: break-word; /* Rompe palabras largas */
+}
+
+/* Elementos internos del producto */
+.producto img {
+    max-width: 100%; /* Imagen responsive */
+    height: auto; /* Mantiene proporción */
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+.producto h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.producto .precio {
+    font-weight: bold;
+    color: #e63946;
+    margin: 0.5rem 0;
+}
+
+.producto .descripcion {
+    font-size: 0.8rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+/* Ajuste para móviles muy pequeños (opcional) */
+@media (max-width: 400px) {
+    .productos {
+        grid-template-columns: 1fr; /* 1 columna si la pantalla es muy estrecha */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
