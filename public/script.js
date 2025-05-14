@@ -99,7 +99,9 @@ function obtenerproductos() {
   {
     const hashValue = window.location.hash.substring(1); 
 
-    fetch(`/tabla/cat${hashValue}`) 
+    const aux = 'cat'+hashValue;
+
+    fetch(`/tabla/${aux}`) 
       .then(response => {
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
