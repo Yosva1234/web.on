@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 app.get('/tabla/:name', (req, res) => {
 
   const { name } = req.params;
-
+  console.log(name);
   const query = `SELECT * FROM ${name}`; 
 
   pool.query(query, (err, results) => {
