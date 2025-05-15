@@ -23,55 +23,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let categorias;
 
-function crearcategorias()
-{
-  document.getElementById("menu").innerHTML="";
-  document.getElementById("productoscat") = innerHTML="";
+function crearcategorias() {
+  document.getElementById("menu").innerHTML = "";
+  document.getElementById("productoscat").innerHTML = "";
 
-  categorias.forEach((element) =>
-  {
-      console.log(element.name);
-      const scroll1 = `
-      <li><a herf = "#${element.name}">${element.name}</a></li>;
-      `;
-
-      const scroll2 = `
+  categorias.forEach((element) => {
+    const scroll1 = `<li><a href="#${element.name}">${element.name}</a></li>`;
+    const scroll2 = `
       <section class="categoria">
         <h2>${element.name}</h2>
-        <div class = "productos" id = "${element.name}">
-
-       </div>
+        <div class="productos" id="${element.name}"></div>
       </section>
-      `;
-
-      document.getElementById("menu").appendChild(scroll1);
-      document.getElementById("productoscat").appendChild(scroll2);
-
+    `;
+    document.getElementById("menu").insertAdjacentHTML('beforeend', scroll1);
+    document.getElementById("productoscat").insertAdjacentHTML('beforeend', scroll2);
   });
 }
 
 //------------------------------------------------------------------------------------------------------
 
 function mostrar(productos) {
+  productos.forEach((element) => {
+    const contenedor = document.getElementById(element.categoria);
+    if (!contenedor) return;
 
-   categorias.forEach((element)=>
-  {
-     document.getElementById(element.name) = innerHTML="";
-  });
-
-    productos.forEach((element) => {
-      const scrooll = document.createElement("div");
-      scrooll.classList.add("producto");
-      scrooll.innerHTML = `
-        <img src="${element.imagen}" alt="${element.nombre}" ">
+    const productoHTML = `
+      <div class="producto">
+        <img src="${element.imagen}" alt="${element.nombre}" onerror="this.src='default.jpg'">
         <h3>${element.nombre}</h3>
-        <p class="precio"> ${element.precio}-CUP</p>
+        <p class="precio">${element.precio}-CUP</p>
         <p class="descripcion">${element.info}</p>
-      `;
-      document.getElementById(element.categoria).appendChild(scrooll);
-    });
-  }
-
+      </div>
+    `;
+    contenedor.insertAdjacentHTML('beforeend', productoHTML);
+  });
+}
 
 function obtenerproductos() {
 
