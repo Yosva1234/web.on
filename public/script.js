@@ -105,9 +105,21 @@ function obtenerproductos() {
       obtenerproductos();
   }
 
+  function mostrarempresa()
+  {
+
+    const name = document.getElementById("empresa").innerHTML = "";
+
+    const scroll = `<h1>${window.location.hash.substring(1).toUpperCase()}</h1>`
+
+    document.getElementById("empresa").insertAdjacentHTML('beforeend', scroll);
+
+    obtenercategorias();
+  }
 
 
-  window.onload = obtenercategorias;
+
+  window.onload = mostrarempresa;
   
 
 
